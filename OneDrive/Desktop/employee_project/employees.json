@@ -1,0 +1,34 @@
+[
+    {
+        "id": "emp1",
+        "name": "abhinaya",
+        "department": "IT",
+        "designation": "software engineer",
+        "salary": 200000.0,
+        "performance": "excellent"
+    },
+    {
+        "id": "emp2",
+        "name": "deepika",
+        "department": "software engineer",
+        "designation": "it",
+        "salary": 10000.0,
+        "performance": "good"
+    },
+    {
+        "id": "1",
+        "name": "usha",
+        "department": "it",
+        "designation": "software engineer",
+        "salary": 40000.0,
+        "performance": "excellent"
+    },
+    {
+        "id": "2",
+        "name": "vaasu",
+        "department": "hr",
+        "designation": "software engineer",
+        "salary": 100000.0,
+        "performance": "good"
+    }
+]
