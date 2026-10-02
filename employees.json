@@ -5,7 +5,7 @@
         "department": "IT",
         "designation": "software engineer",
         "salary": 200000.0,
-        "performance": "excellent"
+        "performance": "Excellent"
     },
     {
         "id": "emp2",
@@ -18,17 +18,37 @@
     {
         "id": "1",
         "name": "usha",
-        "department": "it",
+        "department": "IT",
         "designation": "software engineer",
         "salary": 40000.0,
-        "performance": "excellent"
+        "performance": "Excellent"
     },
     {
-        "id": "2",
-        "name": "vaasu",
+        "id": "emp3",
+        "name": "thulasi",
+        "salary": 50000.0,
+        "department": "finance",
+        "performance": "Average"
+    },
+    {
+        "id": "emp4",
+        "name": "maha",
+        "salary": 500000.0,
         "department": "hr",
-        "designation": "software engineer",
-        "salary": 100000.0,
-        "performance": "good"
+        "performance": "Good"
+    },
+    {
+        "id": "emp5",
+        "name": "kusma",
+        "salary": 60000.0,
+        "department": "it",
+        "performance": "Excellent"
+    },
+    {
+        "id": "emp6",
+        "name": "priya",
+        "salary": 70000.0,
+        "department": "it",
+        "performance": "Excellent"
     }
 ]

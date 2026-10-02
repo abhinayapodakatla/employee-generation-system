@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Employee</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% if messages %}
+
+            {% for category, message in messages %}
+
+                <div class="message {{ category }}">
+                    {{ message }}
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+    <h1>Edit Employee</h1>
+
+    <form action="/update/{{ employee.id }}" method="POST">
+
+        <label>Employee ID:</label>
+
+        <input
+            type="text"
+            value="{{ employee.id }}"
+            disabled
+        >
+
+        <br><br>
+
+        <label>Employee Name:</label>
+
+        <input
+            type="text"
+            name="name"
+            value="{{ employee.name }}"
+            required
+        >
+
+        <br><br>
+
+        <label>Salary:</label>
+
+        <input
+            type="number"
+            name="salary"
+            value="{{ employee.salary }}"
+            required
+        >
+
+        <br><br>
+
+        <label>Department:</label>
+
+        <input
+            type="text"
+            name="department"
+            value="{{ employee.department }}"
+            required
+        >
+
+        <br><br>
+
+        <label>Performance:</label>
+
+        <select name="performance">
+
+            <option
+                value="Excellent"
+                {% if employee.performance == "Excellent" %}
+                selected
+                {% endif %}
+            >
+                Excellent
+            </option>
+
+            <option
+                value="Good"
+                {% if employee.performance == "Good" %}
+                selected
+                {% endif %}
+            >
+                Good
+            </option>
+
+            <option
+                value="Average"
+                {% if employee.performance == "Average" %}
+                selected
+                {% endif %}
+            >
+                Average
+            </option>
+
+            <option
+                value="Needs Improvement"
+                {% if employee.performance == "Needs Improvement" %}
+                selected
+                {% endif %}
+            >
+                Needs Improvement
+            </option>
+
+        </select>
+
+        <br><br>
+
+        <button type="submit">
+            Update Employee
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/">
+        <button type="button">
+            Back to Employee List
+        </button>
+    </a>
+
+</body>
+
+</html>

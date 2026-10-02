@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Salary Comparison</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <h1>Salary Comparison</h1>
+
+
+    <form action="/compare" method="GET">
+
+        <label>Employee 1:</label>
+
+        <select name="employee1" required>
+
+            <option value="">
+                Select Employee
+            </option>
+
+            {% for employee in employees %}
+
+            <option value="{{ employee.id }}">
+
+                {{ employee.id }} -
+                {{ employee.name }}
+
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+
+        <br><br>
+
+
+        <label>Employee 2:</label>
+
+        <select name="employee2" required>
+
+            <option value="">
+                Select Employee
+            </option>
+
+            {% for employee in employees %}
+
+            <option value="{{ employee.id }}">
+
+                {{ employee.id }} -
+                {{ employee.name }}
+
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+
+        <br><br>
+
+
+        <button type="submit">
+            Compare Salary
+        </button>
+
+    </form>
+
+
+    {% if employee1 and employee2 %}
+
+    <hr>
+
+    <h2>Comparison Result</h2>
+
+
+    <div class="dashboard">
+
+        <div class="card">
+
+            <h3>{{ employee1.name }}</h3>
+
+            <p>
+                ₹{{ employee1.salary }}
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>{{ employee2.name }}</h3>
+
+            <p>
+                ₹{{ employee2.salary }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Salary Difference</h3>
+
+        <p>
+            ₹{{ difference }}
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+    <br>
+
+    <a href="/">
+        <button type="button">
+            Back to Dashboard
+        </button>
+    </a>
+
+</body>
+
+</html>
